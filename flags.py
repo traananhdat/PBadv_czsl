@@ -1,6 +1,6 @@
 import argparse
 
-DATA_FOLDER = "/media/lsy/2/njust_czsl/SFF_exp_pre/CZSL_models/data"
+DATA_FOLDER = "/kaggle/input/cszlmitstate/content/DATA_ROOT"
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('--config', default='configs/utzappos.yml', help='path of the config file (training only)')
 parser.add_argument('--dataset', default='mitstates', help='mitstates|zappos')
