@@ -43,7 +43,7 @@ class Get_vit(nn.Module):
         if arch == 'vit-base':
             model = vit_base()
             if pretrained:
-                state_dict = torch.load('./models/dino_vitbase16_pretrain.pth')
+                state_dict = torch.load('/kaggle/input/dino-vitbase16-pretrain-pth/dino_vitbase16_pretrain.pth')
                 model.load_state_dict(state_dict, strict=True)
             self.model = model
         if arch == 'vit-small':
