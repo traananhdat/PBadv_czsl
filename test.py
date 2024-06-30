@@ -65,6 +65,7 @@ def main():
     image_extractor, model, optimizer = configure_model(args, trainset)
     args.extractor = image_extractor
 
+    logpath = '/kaggle/input/ckpt-czsl'
     args.load = ospj(logpath, 'ckpt_best_auc.t7')  # e.g. logpath:
     checkpoint = torch.load(args.load)
     if image_extractor:
