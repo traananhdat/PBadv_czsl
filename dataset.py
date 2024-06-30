@@ -213,12 +213,12 @@ class CompositionDataset(Dataset):
         if self.use_precomputed_features:
             with torch.no_grad():
                 # feats_file = ospj(root, self.phase + '-' + model + '_feats_vectors.t7')
-                feats_file = '/kaggle/input/cszlmitstate/content/DATA_ROOT/mit-states/metadata_compositional-split-natural.t7'
+                feats_file = '/kaggle/input/ckpt-czsl/ckpt_best_auc.t7'
                 if not os.path.exists(feats_file):
                     self.activations = self.generate_features(out_file=feats_file, model=model, args=args)
                 else:
                     activation_data = torch.load(feats_file)
-                    self.activations = dict(zip(activation_data[0]['files'], activation_data[0]['features']))
+                    self.activations = dict(zip(activation_data['files'], activation_data['features']))
 
     def generate_features(self, model, args, out_file=None):
         # data = self.all_data
