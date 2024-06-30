@@ -218,7 +218,7 @@ class CompositionDataset(Dataset):
                     self.activations = self.generate_features(out_file=feats_file, model=model, args=args)
                 else:
                     activation_data = torch.load(feats_file)
-                    self.activations = dict(zip(activation_data['files'], activation_data['features']))
+                    self.activations = dict(zip(activation_data[0]['files'], activation_data[0]['features']))
 
     def generate_features(self, model, args, out_file=None):
         # data = self.all_data
